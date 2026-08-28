@@ -3,6 +3,7 @@
     public import Path
     public import Ownership
 
-    extension Path: Ownership.Borrow.`Protocol` {}
+    /// Selects `Path.Borrowed` as Path's Ownership borrowing representation.
+    extension Path: @retroactive Ownership.Borrow.`Protocol` {}
 
 #endif

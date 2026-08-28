@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-path.git",
+            url: "https://github.com/swift-atoms/swift-path.git",
             branch: "main"
         ),
         .package(
@@ -46,7 +46,11 @@ let package = Package(
         ),
         .testTarget(
             name: "Path Ownership Tests",
-            dependencies: ["Path Ownership"]
+            dependencies: [
+                "Path Ownership",
+                .product(name: "Path", package: "swift-path"),
+                .product(name: "Ownership", package: "swift-ownership"),
+            ]
         ),
     ],
     swiftLanguageModes: [.v6]
